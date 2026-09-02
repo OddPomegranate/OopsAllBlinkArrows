@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "displayName": "Oops All Blink Arrows",
+  "author": "OddPom, Konspiracie/Astreisk",
+  "description": "OopsAllArrows and BlinkArrows, combined into one mod.",
+  "dll": "OopsAllBlinkArrows.dll",
+  "dependencies": [
+    "FortRise:5.3.0"
+  ],
+  "Name": "OopsAllBlinkArrows"
+}

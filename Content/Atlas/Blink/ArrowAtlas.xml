@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:17ae4c45f3b5f167234396b9fa52870d:93fbe2740e1e975defc65a72a783b76b:cde709370900f12288f3449eded86f07$ -->
+<TextureAtlas imagePath="SlimeArrow.png">
+	<SubTexture name="BlinkArrowHud" x="0" y="20" width="5" height="9"/>
+	<SubTexture name="BlinkArrow" x="0" y="0" width="13" height="4"/>
+	<SubTexture name="BlinkArrowBuried" x="0" y="4" width="13" height="4"/>
+	<SubTexture name="BlinkArrowPickup" x="0" y="8" width="12" height="12"/>
+	<SubTexture name="BlinkArrowStartWith" x="0" y="29" width="14" height="14"/>
+	<SubTexture name="BlinkArrowExclude" x="0" y="43" width="14" height="14"/>
+	<SubTexture name="BlinkArrowMatterDisplacement" x="0" y="57" width="14" height="14"/>
+	<SubTexture name="GombocArrowHud" x="5" y="20" width="5" height="9"/>
+	<SubTexture name="GombocArrow" x="13" y="0" width="13" height="4"/>
+	<SubTexture name="GombocArrowBuried" x="13" y="4" width="13" height="4"/>
+	<SubTexture name="GombocArrowPickup" x="13" y="8" width="12" height="12"/>
+	<SubTexture name="GombocArrowStartWith" x="14" y="29" width="14" height="14"/>
+	<SubTexture name="GombocArrowExclude" x="14" y="43" width="14" height="14"/>
+	<SubTexture name="GombocArrowMonostasis" x="14" y="57" width="14" height="14"/>
+	<SubTexture name="NyoomArrowHud" x="10" y="20" width="5" height="9"/>
+	<SubTexture name="NyoomArrow" x="26" y="0" width="13" height="4"/>
+	<SubTexture name="NyoomArrowBuried" x="26" y="4" width="13" height="4"/>
+	<SubTexture name="NyoomArrowPickup" x="26" y="8" width="12" height="12"/>
+	<SubTexture name="NyoomArrowStartWith" x="28" y="29" width="14" height="14"/>
+	<SubTexture name="NyoomArrowExclude" x="28" y="43" width="14" height="14"/>
+	<SubTexture name="NyoomArrowKinesis" x="28" y="57" width="14" height="14"/>
+	<SubTexture name="NyoomArrowUnfired" x="25" y="20" width="13" height="4"/>
+	<SubTexture name="NyoomArrowSpeedLoop" x="25" y="24" width="13" height="5"/>
+	<SubTexture name="PerimeterArrowHud" x="15" y="20" width="5" height="9"/>
+	<SubTexture name="PerimeterArrow" x="39" y="0" width="18" height="4"/>
+	<SubTexture name="PerimeterArrowBuried" x="39" y="4" width="18" height="4"/>
+	<SubTexture name="PerimeterArrowPickup" x="39" y="8" width="12" height="12"/>
+	<SubTexture name="PerimeterArrowStartWith" x="42" y="29" width="14" height="14"/>
+	<SubTexture name="PerimeterArrowExclude" x="42" y="43" width="14" height="14"/>
+	<SubTexture name="PerimeterArrowPhotosynthesis" x="42" y="57" width="14" height="14"/>
+	<SubTexture name="PerimeterArrowBramble" x="42" y="71" width="12" height="12"/>
+	<SubTexture name="SeekerArrowHud" x="20" y="20" width="5" height="9"/>
+	<SubTexture name="SeekerArrow" x="57" y="0" width="14" height="5"/>
+	<SubTexture name="SeekerArrowAngy" x="72" y="0" width="14" height="5"/>
+	<SubTexture name="SeekerArrowBuried" x="39" y="24" width="14" height="5"/>
+	<SubTexture name="SeekerArrowPickup" x="51" y="8" width="12" height="12"/>
+	<SubTexture name="SeekerArrowStartWith" x="56" y="29" width="14" height="14"/>
+	<SubTexture name="SeekerArrowExclude" x="56" y="43" width="14" height="14"/>
+	<SubTexture name="SeekerArrowIntrusiveThoughts" x="56" y="57" width="14" height="14"/>
+	<SubTexture name="SeekerArrowTentacles" x="0" y="71" width="25" height="10"/>
+	<SubTexture name="SeekerArrowTrail" x="0" y="81" width="14" height="20"/>
+	<SubTexture name="SokobanArrowHud" x="54" y="20" width="5" height="9"/>
+	<SubTexture name="SokobanArrow" x="87" y="0" width="13" height="4"/>
+	<SubTexture name="SokobanArrowBuried" x="87" y="4" width="13" height="4"/>
+	<SubTexture name="SokobanArrowPickup" x="63" y="8" width="12" height="12"/>
+	<SubTexture name="SokobanArrowStartWith" x="70" y="29" width="14" height="14"/>
+	<SubTexture name="SokobanArrowExclude" x="70" y="43" width="14" height="14"/>
+	<SubTexture name="SokobanArrowGrudge" x="70" y="57" width="14" height="14"/>
+	<SubTexture name="SokobanArrowBlock" x="14" y="76" width="20" height="20"/>
+	<SubTexture name="SokobanArrowBlockEyes" x="24" y="71" width="10" height="4"/>
+	<SubTexture name="LatencyArrowHud" x="59" y="20" width="5" height="9"/>
+	<SubTexture name="LatencyArrow" x="100" y="0" width="13" height="4"/>
+	<SubTexture name="LatencyArrowBuried" x="100" y="4" width="13" height="4"/>
+	<SubTexture name="LatencyArrowPickup" x="75" y="8" width="12" height="12"/>
+	<SubTexture name="LatencyArrowStartWith" x="84" y="29" width="14" height="14"/>
+	<SubTexture name="LatencyArrowExclude" x="84" y="43" width="14" height="14"/>
+	<SubTexture name="LatencyArrowResynchronization" x="84" y="57" width="14" height="14"/>
+	<SubTexture name="LatencyArrowFletching" x="34" y="71" width="3" height="4"/>
+	<SubTexture name="DecoyArrowHud" x="64" y="20" width="5" height="9"/>
+	<SubTexture name="DecoyArrow" x="113" y="0" width="15" height="6"/>
+	<SubTexture name="DecoyArrowBuried" x="113" y="6" width="15" height="6"/>
+	<SubTexture name="DecoyArrowPickup" x="87" y="8" width="12" height="12"/>
+	<SubTexture name="DecoyArrowStartWith" x="98" y="29" width="14" height="14"/>
+	<SubTexture name="DecoyArrowExclude" x="98" y="43" width="14" height="14"/>
+	<SubTexture name="DecoyArrowCerberus" x="98" y="57" width="14" height="14"/>
+
+	
+</TextureAtlas>

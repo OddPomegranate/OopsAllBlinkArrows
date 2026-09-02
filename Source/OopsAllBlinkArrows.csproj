@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <AssemblyName>OopsAllBlinkArrows</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/*.cs" Exclude="bin/**/*.cs;obj/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TowerFall">
+      <HintPath>lib/TowerFall.Patch.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="FortRise">
+      <HintPath>lib/FortRise.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="FNA">
+      <HintPath>lib/FNA.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>lib/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>lib/MonoMod.Utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- Needed for [MonoModLinkTo] on LatencyArrow/MechArrow's base_Init - FortRise's own mod
+         loader (Relinker.cs) runs a full MonoMod relinker pass over every mod's compiled DLL
+         at load time and rewrites [MonoModLinkTo] methods to call straight into the named
+         target, so this only needs to be visible at compile time (Private=false: it must not
+         be copied alongside our DLL, since it isn't one of FortRise's runtime dependencies). -->
+    <Reference Include="MonoMod.Patcher">
+      <HintPath>lib/MonoMod.Patcher.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>lib/Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyToModRoot" AfterTargets="Build">
+    <ItemGroup>
+      <!-- Wildcarded on AssemblyName (not a fixed .dll;.pdb list) so this also picks up a
+           generated .deps.json without erroring the build if one isn't produced. -->
+      <ModOutputFiles Include="$(OutDir)$(AssemblyName).*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModOutputFiles)" DestinationFolder="$(MSBuildProjectDirectory)/.." SkipUnchangedFiles="false" />
+  </Target>
+
+</Project>
