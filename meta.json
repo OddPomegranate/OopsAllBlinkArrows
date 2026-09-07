@@ -5,7 +5,7 @@
   "description": "OopsAllArrows and BlinkArrows, combined into one mod.",
   "dll": "OopsAllBlinkArrows.dll",
   "dependencies": [
-    "FortRise:5.3.0"
+    "FortRise:5.4.0"
   ],
   "Name": "OopsAllBlinkArrows"
 }

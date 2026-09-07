@@ -3,7 +3,6 @@ using FortRise;
 using HarmonyLib;
 using Microsoft.Xna.Framework;
 using Monocle;
-using MonoMod;
 using MonoMod.Utils;
 using TowerFall;
 
@@ -18,19 +17,23 @@ namespace OopsAllBlinkArrows;
 // instead and never populates those base sprite fields at all, so letting TriggerArrow.Init()
 // run for real is a crash here too (LatencyArrow's version of the same bug threw
 // KeyNotFoundException; this one would fail the same way TriggerArrow.Init() expects those
-// fields to exist). FortRise's own mod loader runs every mod's assembly through a full MonoMod
-// relinker pass (TowerFall.FortRise.mm's Relinker.Relink, modeled on Everest's), so the same
-// [MonoModLinkTo] bypass TriggerBrambleArrow uses works here with no extra build tooling -
-// base_Init below is rewritten by the relinker to call TowerFall.Arrow.Init directly, so Init
-// can call it in place of base.Init(...) and skip TriggerArrow's own crashing Init body while
-// still running Arrow's. The detonator methods (which fully replace behavior rather than
-// augment it) still go through Harmony prefixes that return false to skip the original.
+// fields to exist). This used to rely on FortRise's mod loader running every mod's assembly
+// through a full MonoMod relinker pass at load time, rewriting a [MonoModLinkTo]-tagged
+// base_Init stub to call TowerFall.Arrow.Init directly. MonoMod.Patcher (the package that
+// attribute lives in) is being deprecated, so base_Init now gets the same "call this exact
+// base implementation, skip TriggerArrow's override" behavior from CallHelper.CallBaseGen - a
+// small runtime-emitted non-virtual call, no relinker or extra build tooling needed. See
+// CallHelper.cs for how it works. The detonator methods (which fully replace behavior rather
+// than augment it) still go through Harmony prefixes that return false to skip the original.
 public class MechArrow : TriggerArrow
 {
-    [MonoModLinkTo("TowerFall.Arrow", "System.Void Init(TowerFall.LevelEntity,Microsoft.Xna.Framework.Vector2,System.Single)")]
+    private static readonly Action<TriggerArrow, LevelEntity, Vector2, float> ArrowInit =
+        CallHelper.CallBaseGen<TriggerArrow, LevelEntity, Vector2, float>(
+            typeof(Arrow), "Init", typeof(LevelEntity), typeof(Vector2), typeof(float));
+
     protected void base_Init(LevelEntity owner, Vector2 position, float direction)
     {
-        base.Init(owner, position, direction);
+        ArrowInit(this, owner, position, direction);
     }
 
     // This is automatically been set by the mod loader
